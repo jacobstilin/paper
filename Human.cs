@@ -11,17 +11,14 @@ namespace RPSLS
         //variables
         public int choice;
 
-        //constructor
         public Human()
         {
 
         }
 
-        //methods
-
         public override string ChooseName()
         {
-            Console.WriteLine("Enter a name for this player");
+            Console.WriteLine("Enter a name for this player:");
             playerName = Console.ReadLine();
             return playerName;
         }

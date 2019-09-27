@@ -8,22 +8,14 @@ namespace RPSLS
 {
     class Game
     {
-        //member variables
-
-
         public Setup setup;
-
         public Player playerOne;
         public string p1Name;
         public Player playerTwo;
         public string p2Name;
-
         public bool onWhat;
-
         public int roundNumber;
 
-
-        //constructor spawner
         public Game()
         {
             setup = new Setup();
@@ -36,7 +28,7 @@ namespace RPSLS
             gestures.Add("lizard");
             gestures.Add("spock");
         }
-        //member methods
+        
         public void StartGame()
         {
             DisplayRules();
@@ -58,19 +50,14 @@ namespace RPSLS
             Console.WriteLine("Let's begin!");
             do
             {
-                Console.WriteLine("Round " + roundNumber + ".");
                 RunRound();
                 roundNumber++;
             } while (playerOne.roundsWon != WinCondition(setup.BestOf) && playerTwo.roundsWon != WinCondition(setup.BestOf));
 
-            GameWinner(playerOne.roundsWon, playerTwo.roundsWon);
+            Console.Write(GameWinner(playerOne.roundsWon, playerTwo.roundsWon));
 
         }
-        //1 2 4
-        //2 3 4
-        //3 1 5
-        //4 3 5
-        //5 1 2
+       
         public void RunRound()
         {
             List<string> Gestures = new List<string>();
@@ -80,9 +67,11 @@ namespace RPSLS
             Gestures.Add("lizard");
             Gestures.Add("spock");
 
+            Console.WriteLine("Round " + roundNumber + ".");
             Console.WriteLine("Player One");
             int p1Choice = playerOne.ChooseGesture();
             Console.Clear();
+            Console.WriteLine("Round " + roundNumber + ".");
             Console.WriteLine("Player Two");
             int p2Choice = playerTwo.ChooseGesture();
             Console.Clear();
@@ -95,6 +84,7 @@ namespace RPSLS
                 Console.WriteLine("One, two, three, SHOOT!");
             }
 
+
             Console.WriteLine(p1Name + ": " + Gestures[p1Choice - 1]);
             Console.WriteLine(p2Name + ": " + Gestures[p2Choice - 1]);
 
@@ -104,11 +94,11 @@ namespace RPSLS
             {
                 case 1:
                     playerOne.roundsWon++;
-                    Console.WriteLine(p1Name + " Wins the round!");
+                    Console.WriteLine(p1Name + " wins the round!");
                     break;
                 case 2:
                     playerTwo.roundsWon++;
-                    Console.WriteLine(p2Name + " Wins the round!");
+                    Console.WriteLine(p2Name + " wins the round!");
                     break;
                 case 0:
                     Console.WriteLine("Round was a tie.");
@@ -116,6 +106,7 @@ namespace RPSLS
                 default:
                     break;
             }
+            Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
             Console.Clear();
         }
@@ -183,33 +174,33 @@ namespace RPSLS
                     return 2;
 
             }
-            return 2
-                ;
+            return 2;
         }
 
         public string GameWinner(int p1Score, int p2Score)
         {
             if (p1Score > p2Score)
             {
-                return "Player One Wins!";
+                return (p1Name + " wins!");
             }
             else
             {
-                return "Player Two Wins!";
+                return (p2Name + " wins!");
             }
         }
 
         public void DisplayRules()
         {
-            Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock");
-            Console.WriteLine("This game is a variant of the popular game Rock Paper Scissors");
-            Console.WriteLine("This game can be played Player vs. Player, Player vs. AI or can be simulated AI vs. AI.");
-            Console.WriteLine("User chooses how many rounds the game is best of");
-            Console.WriteLine("User also chooses whether gesture is made on scissors or on shoot.");
-            Console.WriteLine("Rock beats Scissors and Lizard, Scissors beats Paper and Lizard, Paper Beats Rock and Spock,");
-            Console.WriteLine("Lizard beats Paper and Spock and Spock beats Rock and Scissors.");
+            Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock. This game is a variant of the popular game Rock Paper Scissors.");
+            Console.WriteLine("This game can be played Player vs. Player, Player vs. AI or can be simulated AI vs. AI. User chooses how many");
+            Console.WriteLine("rounds the game is best of. User also chooses whether gesture is made on scissors or on shoot.");
+            Console.WriteLine();
+            Console.WriteLine("Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons spock, spock smashes scissors,");
+            Console.WriteLine("scissors decapitates lizard, lizard eats paper, paper disproves spock, spock vaporizes rock and, as always,");
+            Console.WriteLine("rock crushes scissors. I don't really know, it's something to do with Star Trek or pediatric psychoanalysis.");
+            Console.WriteLine();
             Console.WriteLine("The first player to win enough rounds wins. Good luck!");
-            Console.WriteLine(" ");
+            Console.WriteLine();
         }
 
 

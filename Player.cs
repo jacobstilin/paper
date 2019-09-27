@@ -8,25 +8,17 @@ namespace RPSLS
 {
     abstract class Player
     {
-        //variables
         public int roundsWon;
         public string playerName;
 
-
-        //constructor
         public Player()
         {
-
-
             roundsWon = 0;
         }
-
-        //methods
 
         public abstract string ChooseName();
 
         public abstract int ChooseGesture();
-
 
     }
 }

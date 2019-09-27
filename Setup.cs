@@ -27,13 +27,10 @@ namespace RPSLS
             PvPSelector();
             BestOfSelector();
             OnWhatSelector();
-
-
         }
 
         public void PvPSelector()
         {
-
             do
             {
                 string input;
@@ -84,8 +81,14 @@ namespace RPSLS
             {
                 OnScissors = true;
             }
+            if (input == "on shoot")
+            {
+                Console.WriteLine("Ah, an aristocrat");
+                OnScissors = false;
+            }
             else
             {
+                Console.WriteLine("We'll go on shoot then");
                 OnScissors = false;
             }
 

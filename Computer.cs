@@ -8,21 +8,17 @@ namespace RPSLS
 {
     class Computer : Player
     {
-        //variable
         static Random rng = new Random(DateTime.Now.Millisecond);
 
-        //constructor
         public Computer()
         {
 
         }
 
-
-        //methods
-
         public override string ChooseName()
         {
-            int randomNumber = rng.Next(21);
+            Console.WriteLine("Computer choosing name...");
+            int randomNumber = rng.Next(31);
             string computerName;
             switch (randomNumber)
             {
@@ -86,6 +82,36 @@ namespace RPSLS
                 case 20:
                     computerName = "Gucci Maine";
                     break;
+                case 21:
+                    computerName = "Duncan Joans";
+                    break;
+                case 22:
+                    computerName = "Chris Kringle";
+                    break;
+                case 23:
+                    computerName = "Cuffs";
+                    break;
+                case 24:
+                    computerName = "The Big Ragu";
+                    break;
+                case 25:
+                    computerName = "Larry Barry";
+                    break;
+                case 26:
+                    computerName = "Tron";
+                    break;
+                case 27:
+                    computerName = "Leon Isaac Kennedy";
+                    break;
+                case 28:
+                    computerName = "Omar Little";
+                    break;
+                case 29:
+                    computerName = "Sherman Hemsley";
+                    break;
+                case 30:
+                    computerName = "Grif Simmons";
+                    break;
                 default:
                     computerName = "Joe";
                     break;
@@ -95,7 +121,7 @@ namespace RPSLS
 
         public override int ChooseGesture()
         {
-            int randomNumber = rng.Next(6);
+            int randomNumber = rng.Next(1, 6);
             return randomNumber;
         }
     }
