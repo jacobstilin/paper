@@ -33,6 +33,7 @@ namespace RPSLS
         {
             DisplayRules();
             setup.SetupGame();
+
             WinCondition(setup.BestOf);
             CreatePlayers(setup.Pvp);
             onWhat = setup.OnScissors;

@@ -81,7 +81,7 @@ namespace RPSLS
             {
                 OnScissors = true;
             }
-            if (input == "on shoot")
+            else if (input == "on shoot")
             {
                 Console.WriteLine("Ah, an aristocrat");
                 OnScissors = false;

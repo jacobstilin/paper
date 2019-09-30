@@ -27,12 +27,13 @@ namespace RPSLS
         {
             do
             {
+               
                 string input;
                 Console.WriteLine("Enter your gesture. Rock, Paper, Scissors, Lizard, Spock:");
                 input = Console.ReadLine();
+                choice = 0;
                 switch (input)
                 {
-
                     case "rock":
                         choice = 1;
                         break;

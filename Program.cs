@@ -18,4 +18,8 @@ namespace RPSLS
 }
 
 
-
+// todo
+// make names list
+// clean up console display?
+// make sure gesture is valid
+// display round on eve
